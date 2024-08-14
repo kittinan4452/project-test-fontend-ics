@@ -1,5 +1,18 @@
 # React + TypeScript + Vite
-
+# วิธีการติดตั้ง
+ขั้นตอนที่ 1 
+```bash
+  git clone https://github.com/kittinan4452/project-test-fontend-ics.git
+  cd project-test-fontend-ics
+```
+ขั้นตอนที่ 2 ติดตั้ง vite 
+```bash
+  npm install vite --save-dev
+```
+จั้นตอนที่ 3 run WebApplication 
+```bash
+  npm run dev
+```
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
