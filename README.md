@@ -9,7 +9,18 @@
 ```bash
   npm install vite --save-dev
 ```
-จั้นตอนที่ 3 run WebApplication 
+ขั้นตอนที่ 3 ก่อนรันเข้าไปในไฟล์ vite.config ทำการลบ base ก่อนรัน
+```bash
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  
+})
+```
+ขั้นตอนที่ 4 run WebApplication 
 ```bash
   npm run dev
 ```
