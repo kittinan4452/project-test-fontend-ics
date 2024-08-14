@@ -24,3 +24,7 @@ export default defineConfig({
 ```bash
   npm run dev
 ```
+ขั้นตอนที่ 5 เข้า Browser copy นำไปวางใน Browser
+```bash
+  http://localhost:5173/
+```
