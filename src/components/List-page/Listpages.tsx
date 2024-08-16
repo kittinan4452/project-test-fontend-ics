@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Divider, Pagination, Stack } from '@mui/material';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { Link } from 'react-router-dom';
 import Navbar from "../Navbar"
 import Data from "../../json-file/example_data.json";
+
 
 type Props = {}
 
@@ -57,13 +60,15 @@ export default function Listpages({}: Props) {
         <Navbar/>
     <div className='min-w-full min-h-[100vh] flex justify-center  bg-[#c4d3e9]'>
       <div className='container'>
-        <div className='flex justify-between my-6 items-center '>
-          <div>
-            <h1 className='font-kanit text-2xl font-bold text-black'>Place List</h1>
-          </div>
-          <div className='flex space-x-3'>
+        
+        <div className='flex justify-between  max-md:flex-col mt-7 max-md:space-y-3 xl:items-center max-md:px-10 max-md:mx-[-15px]'>
+          <div className='flex justify-start'>
+            <h1 className='font-kanit text-2xl font-semibold text-black'>Place List</h1>
+          </div >
+          <div className='flex md:space-x-3 max-md:flex-col max-md:space-y-5'>
+            <div >
             <select 
-              className="select select-bordered w-[200px] border-[#134b8a] rounded-full bg-white max-w-xs"
+              className="select select-bordered w-[200px] max-md:w-80 border-[#134b8a] rounded-full bg-white "
               value={selectedCategory}
               onChange={handleCategoryChange}
             >
@@ -72,8 +77,10 @@ export default function Listpages({}: Props) {
                 <option value="bakery">Bakery</option>
                 <option value="cafe">Cafe</option>
             </select>
-            <Divider orientation="vertical" variant="middle" className='text-black' flexItem />
-            <label className="input input-bordered flex items-center gap-2 bg-white border-[#134b8a] w-[400px] rounded-full">
+            </div>
+            <div className='max-md:hidden'><Divider  orientation="vertical" variant="middle" className='text-black' flexItem /></div>
+            <div>
+            <label className="input input-bordered flex items-center gap-2 bg-white border-[#134b8a] w-[400px] max-md:w-80 rounded-full">
               <input 
                 type="text" 
                 className="grow" 
@@ -92,36 +99,42 @@ export default function Listpages({}: Props) {
                   clipRule="evenodd" />
               </svg>
             </label>
+            </div>
           </div>
         </div>
+        
 
-        <div className='flex flex-wrap justify-between'>
+        <div className='flex flex-wrap justify-between max-md:justify-center '>
           {currentData.map(record => {
             return (
-              <Link to={`/detail/${record.id}`} key={record.id} className='bg-white w-[492px] max-xl:w-[300px] h-[260px] rounded-lg my-5'>
-                <div className='flex items-center space-x-5 pt-5 pb-2 text-black font-kanit'>
-                  <div className='ml-5 w-20 items-center'>
+              <Link to={`/detail/${record.id}`} key={record.id} className='bg-white w-[492px] max-md:w-80  h-[260px] rounded-xl my-5'>
+                <div className='flex max-md:flex-col items-center   space-x-5 md:pt-5 pb-2 text-black font-kanit'>
+                  <div className='md:ml-5 w-20 max-md:w-80 max-md:h-[87px] rounded-xl items-center'>
                     <img
-                      className="mask mask-square h-[60px] w-[60px] rounded-xl"
+                      className="md:mask md:mask-square md:h-[60px] md:w-[60px] max-md:w-[320px] max-md:h-[130px] md:rounded-xl max-md:rounded-t-xl"
                       src={record.profile_image_url} 
                     />
                   </div>
                   <div className='w-full'>
-                    <div>{record.name}</div>
+                    <div className='max-md:mt-11 text-xl'>{record.name}</div>
+                    
                     <div className='flex justify-between mt-1'>
-                      <div>เวลา {record.operation_time[0].time_open} AM - {record.operation_time[0].time_close} PM</div>
-                      <div className='mr-10 text-[#134B8A]'>
-                        <FiberManualRecordIcon fontSize='small' className='mr-1' />
+                      <div className=''><CalendarMonthIcon/> {record.operation_time[0].time_open} AM - {record.operation_time[0].time_close} PM</div>
+                      <div className=' flex mr-10 text-[#134B8A] max-md:text-white max-md:w-[67px] max-md:h-[31px] max-md:items-center max-md:justify-center max-md:rounded-2xl max-md:mt-[-50px] max-md:bg-[#134B8A]'>
+                        <div className='max-md:hidden'><FiberManualRecordIcon fontSize='small' className='mr-1' /></div>
                         {record.rating}
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="flex rounded-box justify-center px-3 pb-3">
-                  <img className='w-[155px] h-[155px] rounded-l-xl' src={record.images[0]} alt="Image 1" />
-                  <img className='w-[155px] h-[155px]' src={record.images[1]} alt="Image 2" />
-                  <img className='w-[155px] h-[155px] rounded-r-xl' src={record.images[2]} alt="Image 3" />
+                <div className="flex rounded-box justify-center px-3 pb-3 ">
+                  <img className='w-[155px] h-[155px]   rounded-l-xl' src={record.images[0]} alt="Image 1" />
+                  <img className='w-[155px] h-[155px] ' src={record.images[1]} alt="Image 2" />
+                  <img className='w-[155px] h-[155px]  rounded-r-xl' src={record.images[2]} alt="Image 3" />
                 </div>  
+                <div>
+                  
+                </div>
               </Link>
             );
           })}

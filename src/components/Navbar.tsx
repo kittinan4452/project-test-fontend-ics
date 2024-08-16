@@ -1,8 +1,8 @@
 import React from 'react';
-import { AppBar, Toolbar,  IconButton, Avatar, Badge, Menu, MenuItem, Typography } from '@mui/material';
+import { AppBar, Toolbar,  IconButton, Avatar, Badge, Menu, MenuItem, } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import Profile from "../../public/images/Profile.png"
+import Profile from "../../public/images/Rectangle 296.png"
 import Sidebar from './Sidebar';
 
 const Header: React.FC = () => {
@@ -19,22 +19,23 @@ const Header: React.FC = () => {
   return (
     <AppBar   position="static" color="primary">
       
-      <Toolbar className='static flex justify-end bg-[#134B8A]'>
+      <Toolbar className='static flex justify-end bg-[#134B8A] max-xl:h-20'>
         <Sidebar/>
       <div className='flex items-center'>
       <div>
-        <Badge color="secondary"  variant="dot">
+        <div className='max-xl:hidden'><Badge color="secondary"  variant="dot">
       <NotificationsIcon   fontSize="large" />
 
-      </Badge>
+      </Badge></div>
     
       </div>
         <div className='flex items-center space-x-2 ml-2'>
-        <Avatar src={Profile} alt="Akkarapol" />
-        <h1 className='text-base/[24px]'>Akkalapol</h1>
-          <IconButton onClick={handleMenu} color="inherit">
-          <KeyboardArrowDownIcon/>
-        </IconButton >
+        <Avatar sx={{ width: 60, height: 60 }} src={Profile} alt="Akkarapol" />
+        <h1 className='text-base/[24px] max-xl:hidden'>Akkalapol</h1>
+          
+          <div className='max-xl:hidden'><IconButton onClick={handleMenu} color="inherit">
+          <KeyboardArrowDownIcon className='max-xl:hidden'/>
+        </IconButton ></div>
         </div>
         </div>
         
