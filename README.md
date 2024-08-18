@@ -28,7 +28,3 @@ export default defineConfig({
 ```bash
   http://localhost:5173/
 ```
-ขั้นตอนที่ 6 runผ่าน Host
-```bash
-  npm run host
-```

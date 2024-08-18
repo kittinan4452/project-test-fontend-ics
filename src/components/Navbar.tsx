@@ -19,21 +19,21 @@ const Header: React.FC = () => {
   return (
     <AppBar   position="static" color="primary">
       
-      <Toolbar className='static flex justify-end bg-[#134B8A] max-xl:h-20'>
+      <Toolbar className='static flex justify-end bg-[#134B8A] max-md:h-20'>
         <Sidebar/>
       <div className='flex items-center'>
       <div>
-        <div className='max-xl:hidden'><Badge color="secondary"  variant="dot">
+        <div className='max-md:hidden'><Badge color="secondary"  variant="dot">
       <NotificationsIcon   fontSize="large" />
 
       </Badge></div>
     
       </div>
         <div className='flex items-center space-x-2 ml-2'>
-        <Avatar sx={{ width: 60, height: 60 }} src={Profile} alt="Akkarapol" />
-        <h1 className='text-base/[24px] max-xl:hidden'>Akkalapol</h1>
+        <Avatar className='' sx={{ width: 60, height: 60 }} src={Profile} alt="Akkarapol" />
+        <h1 className='text-base/[24px] max-md:hidden'>Akkalapol</h1>
           
-          <div className='max-xl:hidden'><IconButton onClick={handleMenu} color="inherit">
+          <div className='max-md:hidden'><IconButton onClick={handleMenu} color="inherit">
           <KeyboardArrowDownIcon className='max-xl:hidden'/>
         </IconButton ></div>
         </div>
