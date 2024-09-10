@@ -6,7 +6,8 @@ type Props = {}
 
 export default function Sidebar({}: Props) {
   return (
-    <div className='absolute w-[90px] h-[1456px] max-md:h-0  rounded-r-[50px] md:bg-white md:shadow-2xl md:border  left-0 top-0 ' >
+    //Sidebar ของหน้า Webside
+    <div className='absolute w-[90px] h-[1456px] max-md:h-0  rounded-r-[50px] sm:bg-white sm:shadow-2xl sm:border  left-0 top-0 ' >
         <div className='flex justify-center'>
         <div className='mt-[25px] mb-[25px] max-xl:mt-4 '>
             <img src={Logo} width={53} height={53} className='max-xl:rounded-xl'/>
